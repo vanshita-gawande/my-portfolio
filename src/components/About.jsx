@@ -17,7 +17,7 @@ function About() {
       </h2>
 
       {/* Content Area */}
-      <div className="flex flex-col md:flex-row justify-between items-start gap-14 relative z-10">
+      <div className="flex flex-col lg:flex-row justify-between items-start gap-14 relative z-10">
         {/* Left Description */}
         <div className="max-w-[600px]">
           <p className="text-lg leading-relaxed text-gray-300 mb-4">
@@ -46,8 +46,8 @@ function About() {
           </p>
         </div>
 
-        {/* Card Highlights (Back to old shape style) */}
-        <div className="grid grid-cols-2 gap-5 w-full md:w-[40%]">
+        {/* Card Highlights */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 gap-5 w-full lg:w-[40%] mx-auto lg:mx-0">
           {[
             {
               icon: <FaCode />,

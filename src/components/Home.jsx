@@ -17,7 +17,7 @@ function Home() {
       <div className="flex flex-col md:flex-row items-center justify-between max-w-[1200px] w-full relative z-10">
         {/* Left Text Section */}
         <motion.div
-          className="max-w-[55%]"
+          className="max-w-[100%] md:max-w-[55%] text-center md:text-left"
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -31,14 +31,8 @@ function Home() {
           <h2 className="text-xl md:text-2xl font-medium text-gray-300">
             Full-Stack | MERN Developer | Blockchain Enthusiast
           </h2>
-
-          <p className="text-gray-400 mt-4 text-lg">
-            I build clean, responsive and scalable web applications with a
-            strong focus on performance and good user experience.
-          </p>
-
           {/* Buttons */}
-          <div className="flex gap-4 mt-6">
+          <div className="flex flex-col sm:flex-row sm:justify-start justify-center items-center gap-4 mt-6">
             <a
               href="#projects"
               className="inline-flex items-center gap-2 px-6 py-3 bg-transparent border border-[#ed552f] text-[#ff7e5f] font-medium rounded-md hover:bg-[#ff7e5f] hover:text-white transition duration-300"
@@ -47,7 +41,6 @@ function Home() {
             </a>
             <a
               href="/resume.pdf"
-
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#f44c22] text-white font-medium rounded-md hover:bg-[#ff916f] transition duration-300"
             >
               <FontAwesomeIcon icon={faDownload} className="text-sm" />
