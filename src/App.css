@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.App {
+  text-align: center;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
