@@ -6,6 +6,8 @@ import {
   TbBolt,
   TbLayoutGrid,
   TbMessage,
+  TbBook,
+  TbBriefcase,
 } from "react-icons/tb";
 
 function Navbar() {
@@ -15,12 +17,15 @@ function Navbar() {
     { name: "home", icon: <TbHome size={15} /> },
     { name: "about", icon: <TbUser size={15} /> },
     { name: "skills", icon: <TbBolt size={15} /> },
+    { name: "education", icon: <TbBook size={15} /> }, // ✅ Added
+    { name: "experience", icon: <TbBriefcase size={15} /> }, // ✅ Added
     { name: "projects", icon: <TbLayoutGrid size={15} /> },
     { name: "contact", icon: <TbMessage size={15} /> },
   ];
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-[#1b1b1bd9] backdrop-blur-md text-white shadow-[0_4px_10px_rgba(0,0,0,0.4)] z-50 px-12 py-4 flex items-center justify-start border-b border-white/10">
+      {/* Desktop Menu */}
       <ul className="hidden md:flex gap-10 font-semibold tracking-wide ml-16">
         {navItems.map((item) => (
           <li
@@ -39,7 +44,7 @@ function Navbar() {
         ))}
       </ul>
 
-      {/* Mobile */}
+      {/* Mobile Menu Toggle */}
       <div
         className="md:hidden ml-auto flex flex-col gap-1.5 cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
@@ -61,7 +66,7 @@ function Navbar() {
         />
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Dropdown Menu */}
       <ul
         className={`absolute top-[70px] right-8 bg-[#232323] backdrop-blur-lg border border-white/10 rounded-lg p-5 flex flex-col gap-4 shadow-lg transition-all duration-300 md:hidden ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
@@ -84,4 +89,5 @@ function Navbar() {
     </nav>
   );
 }
+
 export default Navbar;

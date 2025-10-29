@@ -20,10 +20,10 @@ function App() {
       <div id="about">
         <About />
       </div>
-      <div>
+      <div id = "education">
         <Education />
       </div>
-      <div>
+      <div id = "section">
         <Experience />
       </div>
       <div id="projects">
