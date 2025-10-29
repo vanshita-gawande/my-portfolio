@@ -47,7 +47,6 @@ function Home() {
             </a>
             <a
               href="/resume.pdf"
-              download="Vanshita_Gawande_Resume.pdf"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#f44c22] text-white font-medium rounded-md hover:bg-[#ff916f] transition duration-300"
             >
               <FontAwesomeIcon icon={faDownload} className="text-sm" />

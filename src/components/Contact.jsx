@@ -28,7 +28,7 @@ function Contact() {
             <div className="space-y-4">
               <p className="flex items-center gap-3 text-gray-300 hover:text-white transition">
                 <FontAwesomeIcon icon={faEnvelope} className="text-[#ed552f]" />
-                vansgitapatil01@gmail.com
+                vanshitapatil01@gmail.com
               </p>
               <p className="flex items-center gap-3 text-gray-300 hover:text-white transition">
                 <FontAwesomeIcon
@@ -62,11 +62,18 @@ function Contact() {
 
           {/* ===== Right Contact Form ===== */}
           <form
-            action="https://formsubmit.co/vansgitapatil01@gmail.com"
+            action="https://formsubmit.co/vanshitapatil01@gmail.com"
             method="POST"
             className="space-y-4"
           >
+            {/* FormSubmit Settings */}
             <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://vanshita-portfolio-zeta.vercel.app/#contact"
+            />
 
             <input
               type="text"
