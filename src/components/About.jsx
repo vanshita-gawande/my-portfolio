@@ -40,6 +40,7 @@ function About() {
             </span>{" "}
             to build secure, modern decentralized solutions.
           </p>
+
           <p className="text-lg leading-relaxed text-gray-300">
             I love solving real-world problems through code and continuously
             improving my development skills.

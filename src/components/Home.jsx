@@ -31,6 +31,10 @@ function Home() {
           <h2 className="text-xl md:text-2xl font-medium text-gray-300">
             Full-Stack | MERN Developer | Blockchain Enthusiast
           </h2>
+          <p className="text-gray-400 mt-4 text-lg">
+            I build clean, responsive and scalable web applications with a
+            strong focus on performance and good user experience.
+          </p>
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row sm:justify-start justify-center items-center gap-4 mt-6">
             <a
@@ -56,11 +60,25 @@ function Home() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="relative w-[380px] h-[430px] rounded-2xl overflow-hidden shadow-lg border border-[#ffffff1a] bg-[#2a2a2a33] backdrop-blur-md hover:scale-[1.02] transition duration-300">
+          <div
+            className="
+      relative 
+      w-[180px] h-[180px]              /* Default for mobile */
+      md:w-[380px] md:h-[430px]        /* Desktop size */
+      rounded-full md:rounded-2xl     /* Circle on mobile, rectangle on desktop */
+      overflow-hidden 
+      shadow-lg border border-[#ffffff1a] 
+      bg-[#2a2a2a33] backdrop-blur-md 
+      hover:scale-[1.02] transition duration-300
+    "
+          >
             <img
               src="/images/Profile.jpg"
               alt="Profile"
-              className="w-full h-full object-cover"
+              className="
+        w-full h-full object-cover
+        object-center                      /* Keeps face centered */
+      "
             />
           </div>
         </motion.div>
