@@ -29,7 +29,7 @@ function Home() {
             </span>
           </h1>
           <h2 className="text-xl md:text-2xl font-medium text-gray-300">
-            Full-Stack Developer | MERN | Blockchain Enthusiast
+            Full-Stack | MERN Developer | Blockchain Enthusiast
           </h2>
 
           <p className="text-gray-400 mt-4 text-lg">
