@@ -44,7 +44,7 @@ function Home() {
               View My Work <FaArrowDown className="text-sm" />
             </a>
             <a
-              href="/resume.pdf"
+              href="/Vanshita_Gawande_CV.pdf"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#f44c22] text-white font-medium rounded-md hover:bg-[#ff916f] transition duration-300"
             >
               <FontAwesomeIcon icon={faDownload} className="text-sm" />
