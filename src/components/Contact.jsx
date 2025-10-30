@@ -1,6 +1,11 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEnvelope,
+  faLocationDot,
+  faCircleCheck,
+} from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 function Contact() {
@@ -9,35 +14,30 @@ function Contact() {
     email: "",
     message: "",
   });
-  const [success, setSuccess] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Send using FormSubmit API
-    const response = await fetch(
-      "https://formsubmit.co/ajax/vanshitagawande01@gmail.com",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(formData),
-      }
-    );
+    // Replace with your own EmailJS IDs
+    const serviceID = "service_us2vyt6"; // your Gmail service ID
+    const templateID = "template_kmf9dg4"; // your created template ID
+    const publicKey = "oSsAFoxHSmhcsOrIY"; // your EmailJS public key
 
-    if (response.ok) {
-      setSuccess(true);
-      setFormData({ name: "", email: "", message: "" }); // clear form
-      setTimeout(() => setSuccess(false), 3000); // hide popup after 3s
-    } else {
-      alert("Something went wrong! Please try again.");
-    }
+    emailjs
+      .send(serviceID, templateID, formData, publicKey)
+      .then(() => {
+        setShowPopup(true);
+        setFormData({ name: "", email: "", message: "" });
+      })
+      .catch((error) => {
+        console.error("Email send error:", error);
+        alert("Something went wrong! Please try again.");
+      });
   };
 
   return (
@@ -100,27 +100,27 @@ function Contact() {
               type="text"
               name="name"
               placeholder="Your Name"
-              required
               value={formData.name}
               onChange={handleChange}
+              required
               className="w-full p-3 bg-[#242424] text-white rounded-md border border-gray-700 focus:border-[#ed552f] outline-none"
             />
             <input
               type="email"
               name="email"
               placeholder="Your Email"
-              required
               value={formData.email}
               onChange={handleChange}
+              required
               className="w-full p-3 bg-[#242424] text-white rounded-md border border-gray-700 focus:border-[#ed552f] outline-none"
             />
             <textarea
               name="message"
               placeholder="Your Message"
-              required
-              rows="4"
               value={formData.message}
               onChange={handleChange}
+              required
+              rows="4"
               className="w-full p-3 bg-[#242424] text-white rounded-md border border-gray-700 focus:border-[#ed552f] outline-none"
             ></textarea>
 
@@ -130,16 +130,31 @@ function Contact() {
             >
               Send Message
             </button>
-
-            {/* Success Popup */}
-            {success && (
-              <div className="text-center text-green-400 mt-3 animate-fade-in">
-                Message sent successfully!
-              </div>
-            )}
           </form>
         </div>
       </section>
+
+      {/* ===== Success Popup ===== */}
+      {showPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50">
+          <div className="bg-white text-black p-6 rounded-lg text-center shadow-lg">
+            <h3 className="text-xl font-semibold mb-3 flex items-center justify-center gap-2">
+              <FontAwesomeIcon
+                icon={faCircleCheck}
+                className="text-green-500 text-2xl"
+              />
+              Message Sent!
+            </h3>
+            <p>Thank you for contacting me. I’ll get back to you soon.</p>
+            <button
+              onClick={() => setShowPopup(false)}
+              className="mt-4 px-4 py-2 bg-[#ed552f] text-white rounded-md hover:bg-[#ff8a6f] transition"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* ===== FOOTER SECTION ===== */}
       <footer className="bg-[#111] text-center py-4 text-gray-400 text-sm border-t border-gray-800">

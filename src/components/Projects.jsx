@@ -4,20 +4,6 @@ import { FaGithub } from "react-icons/fa";
 const Projects = () => {
   const projectData = [
     {
-      title: "SQL-Driven Hotel Booking Solution",
-      description:
-        "A comprehensive hotel management system for online room booking, billing, and customer tracking.",
-      technologies: ["React", "Node.js", "MongoDB"],
-      github: "https://github.com/vanshita-gawande/New-Learning",
-    },
-    {
-      title: "FilmyVerse",
-      description:
-        "A sleek movie review and streaming UI with Firebase authentication and real-time database.",
-      technologies: ["React", "Firebase", "TailwindCSS"],
-      github: "https://github.com/vanshita-gawande",
-    },
-    {
       title: "Sports Complex Booking",
       description:
         "Real-time sport ground booking platform with authentication, dashboard, and admin panel.",
@@ -28,8 +14,29 @@ const Projects = () => {
       title: "EcoTrace - Supply Chain Blockchain",
       description:
         "Blockchain-based product verification system with QR scanning and tamper-proof data.",
-      technologies: ["React", "Solidity", "Ethereum", "Ethers.js", "Node.js"],
+      technologies: [
+        "React",
+        "Solidity",
+        "Node.js",
+        "MongoDb",
+        "Hardhat",
+        "Ether.Js",
+      ],
       github: "https://github.com/vanshita-gawande/EcoTrace",
+    },
+    {
+      title: "SQL-Driven Hotel Booking Solution",
+      description:
+        "A comprehensive hotel management system for online room booking, billing, and customer tracking.",
+      technologies: ["HTML"," CSS", "JavaScript","PHP", "MySQL"],
+      github: "https://github.com/vanshita-gawande/New-Learning",
+    },
+    {
+      title: "FilmyVerse",
+      description:
+        "A sleek movie review and streaming UI with Firebase authentication and real-time database.",
+      technologies: ["React", "Firebase", "TailwindCSS"],
+      github: "https://github.com/vanshita-gawande",
     },
   ];
 
