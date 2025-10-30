@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import {
   TbHome,
@@ -12,16 +12,36 @@ import {
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home"); // 👈 new state
 
   const navItems = [
     { name: "home", icon: <TbHome size={15} /> },
     { name: "about", icon: <TbUser size={15} /> },
     { name: "skills", icon: <TbBolt size={15} /> },
-    { name: "education", icon: <TbBook size={15} /> }, // ✅ Added
-    { name: "experience", icon: <TbBriefcase size={15} /> }, // ✅ Added
+    { name: "education", icon: <TbBook size={15} /> },
+    { name: "experience", icon: <TbBriefcase size={15} /> },
     { name: "projects", icon: <TbLayoutGrid size={15} /> },
     { name: "contact", icon: <TbMessage size={15} /> },
   ];
+
+  // ✅ Detect which section is in view
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.6 } // adjust visibility sensitivity
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => sections.forEach((section) => observer.unobserve(section));
+  }, []);
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-[#1b1b1bd9] backdrop-blur-md text-white shadow-[0_4px_10px_rgba(0,0,0,0.4)] z-50 px-12 py-4 flex items-center justify-start border-b border-white/10">
@@ -30,13 +50,25 @@ function Navbar() {
         {navItems.map((item) => (
           <li
             key={item.name}
-            className="flex items-center gap-2 hover:scale-105 transition"
+            className={`flex items-center gap-2 transition ${
+              activeSection === item.name ? "scale-105" : ""
+            }`}
           >
-            <span className="text-[#ff7e5f]">{item.icon}</span>
+            <span
+              className={`${
+                activeSection === item.name ? "text-[#ff7e5f]" : "text-gray-400"
+              }`}
+            >
+              {item.icon}
+            </span>
             <Link
               to={`#${item.name}`}
               smooth
-              className="text-white text-[17px] capitalize transition-all duration-300 hover:text-[#ff7e5f] hover:tracking-[1px] hover:border-b-2 border-[#ff7e5f]"
+              className={`capitalize text-[17px] transition-all duration-300 ${
+                activeSection === item.name
+                  ? "text-[#ff7e5f] border-b-2 border-[#ff7e5f]"
+                  : "text-white hover:text-[#ff7e5f]"
+              }`}
             >
               {item.name}
             </Link>
@@ -66,7 +98,7 @@ function Navbar() {
         />
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Dropdown */}
       <ul
         className={`absolute top-[70px] right-8 bg-[#232323] backdrop-blur-lg border border-white/10 rounded-lg p-5 flex flex-col gap-4 shadow-lg transition-all duration-300 md:hidden ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
@@ -74,12 +106,22 @@ function Navbar() {
       >
         {navItems.map((item) => (
           <li key={item.name} className="flex items-center gap-2">
-            <span className="text-[#ff7e5f]">{item.icon}</span>
+            <span
+              className={`${
+                activeSection === item.name ? "text-[#ff7e5f]" : "text-gray-400"
+              }`}
+            >
+              {item.icon}
+            </span>
             <Link
               to={`#${item.name}`}
               smooth
               onClick={() => setIsOpen(false)}
-              className="text-white text-[17px] capitalize transition duration-300 hover:text-[#ff7e5f]"
+              className={`capitalize text-[17px] transition duration-300 ${
+                activeSection === item.name
+                  ? "text-[#ff7e5f]"
+                  : "text-white hover:text-[#ff7e5f]"
+              }`}
             >
               {item.name}
             </Link>
