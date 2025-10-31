@@ -32,9 +32,9 @@ const Projects = () => {
       github: "https://github.com/vanshita-gawande/New-Learning",
     },
     {
-      title: "FilmyVerse",
+      title: "Movie Catlog",
       description:
-        "A sleek movie review and streaming UI with Firebase authentication and real-time database.",
+        "A sleek movie review platform and streaming UI for exploring and rating movies. ",
       technologies: ["React", "Firebase", "TailwindCSS"],
       github: "https://github.com/vanshita-gawande",
     },
