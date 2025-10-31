@@ -8,6 +8,7 @@ import {
   FaPython,
   FaJava,
   FaGitAlt,
+  FaDatabase,
 } from "react-icons/fa";
 import {
   SiMongodb,
@@ -20,25 +21,25 @@ import {
 } from "react-icons/si";
 
 const Skills = () => {
-  const skills = [
-    { name: "React", icon: <FaReact />, color: "#61DBFB" },
-    { name: "Node.js", icon: <FaNodeJs />, color: "#3C873A" },
-    { name: "Express.js", icon: <SiExpress />, color: "#FFFFFF" },
-    { name: "MongoDB", icon: <SiMongodb />, color: "#4DB33D" },
-    { name: "MySQL", icon: <SiMysql />, color: "#00618A" },
-    { name: "JavaScript", icon: <FaJsSquare />, color: "#F7DF1E" },
-    { name: "Python", icon: <FaPython />, color: "#3776AB" },
-    { name: "Java", icon: <FaJava />, color: "#f89820" },
-    { name: "Redux", icon: <SiRedux />, color: "#764ABC" },
-    { name: "Git", icon: <FaGitAlt />, color: "#F1502F" },
-    { name: "Firebase", icon: <SiFirebase />, color: "#FFCB2B" },
-    { name: "Blockchain", icon: <SiBlockchaindotcom />, color: "#FF7E5F" },
-    { name: "REST API", icon: <FaNodeJs />, color: "#00B894" },
-    { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "#38BDF8" },
-    { name: "HTML", icon: <FaHtml5 />, color: "#E44D26" },
-    { name: "CSS", icon: <FaCss3 />, color: "#1572B6" },
-  ];
-
+const skills = [
+  { name: "React", icon: <FaReact />, color: "#61DBFB" },
+  { name: "Node.js", icon: <FaNodeJs />, color: "#3C873A" },
+  { name: "Express.js", icon: <SiExpress />, color: "#FFFFFF" },
+  { name: "MongoDB", icon: <SiMongodb />, color: "#4DB33D" },
+  { name: "MySQL", icon: <SiMysql />, color: "#00618A" },
+  { name: "SQL", icon: <FaDatabase />, color: "#336791" }, // ✅ Correct for SQL
+  { name: "JavaScript", icon: <FaJsSquare />, color: "#F7DF1E" },
+  { name: "Python", icon: <FaPython />, color: "#3776AB" },
+  { name: "Java", icon: <FaJava />, color: "#f89820" },
+  { name: "Redux", icon: <SiRedux />, color: "#764ABC" },
+  { name: "Git", icon: <FaGitAlt />, color: "#F1502F" },
+  { name: "Firebase", icon: <SiFirebase />, color: "#FFCB2B" },
+  { name: "Blockchain", icon: <SiBlockchaindotcom />, color: "#FF7E5F" },
+  { name: "REST API", icon: <FaNodeJs />, color: "#00B894" },
+  { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "#38BDF8" },
+  { name: "HTML", icon: <FaHtml5 />, color: "#E44D26" },
+  { name: "CSS", icon: <FaCss3 />, color: "#1572B6" },
+];
   return (
     <section id="skills" className="px-[10%] py-16 bg-[#1a1a1a] text-white">
       <h2 className="text-3xl font-bold mb-10 border-l-4 border-[#ed552f] pl-4">
