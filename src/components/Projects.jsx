@@ -7,7 +7,7 @@ const Projects = () => {
       title: "Sports Complex Booking",
       description:
         "Real-time sport ground booking platform with authentication, dashboard, and admin panel.",
-      technologies: ["React", "NodeJs", "MongoDb", "Express", "TailwindCSS"],
+      technologies: ["React", "Node.Js", "MongoDb", "Express", "TailwindCSS"],
       github: "https://github.com/vanshita-gawande/Akhand-Web-Frontend",
     },
     {
