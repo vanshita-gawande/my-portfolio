@@ -28,15 +28,15 @@ const Projects = () => {
       title: "SQL-Driven Hotel Booking Solution",
       description:
         "A comprehensive hotel management system for online room booking, billing, and customer tracking.",
-      technologies: ["HTML"," CSS", "JavaScript","PHP", "MySQL"],
+      technologies: ["HTML", " CSS", "JavaScript", "PHP", "MySQL"],
       github: "https://github.com/vanshita-gawande/New-Learning",
     },
     {
       title: "Movie Catlog",
       description:
         "A sleek movie review platform and streaming UI for exploring and rating movies. ",
-      technologies: ["React", "Firebase", "TailwindCSS"],
-      github: "https://github.com/vanshita-gawande",
+      technologies: ["React", "Node.js", "Firebase", "TailwindCSS"],
+      github: "https://github.com/vanshita-gawande/movie-catlog",
     },
   ];
 
