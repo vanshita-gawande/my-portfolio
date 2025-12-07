@@ -6,7 +6,7 @@ const Projects = () => {
     {
       title: "Sports Complex Booking",
       description:
-        "Real-time sport ground booking platform with authentication, dashboard, and admin panel.",
+        "Real-time sport ground booking platform with authentication, dashboard and admin panel.",
       technologies: ["React", "Node.Js", "MongoDb", "Express", "TailwindCSS"],
       github: "https://github.com/vanshita-gawande/Akhand-Web-Frontend",
     },
@@ -27,7 +27,7 @@ const Projects = () => {
     {
       title: "SQL-Driven Hotel Booking Solution",
       description:
-        "A comprehensive hotel management system for online room booking, billing, and customer tracking.",
+        "A comprehensive hotel management system for online room booking, billing and customer tracking.",
       technologies: ["HTML", " CSS", "JavaScript", "PHP", "MySQL"],
       github: "https://github.com/vanshita-gawande/New-Learning",
     },

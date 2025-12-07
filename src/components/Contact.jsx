@@ -56,7 +56,7 @@ function Contact() {
           <div>
             <p className="text-lg text-gray-300 mb-4">
               Feel free to <span className="text-[#ed552f]">reach out</span> for
-              collaborations, freelance work, or just to connect!
+              collaborations, freelance work or just to connect!
             </p>
 
             <div className="space-y-4">
